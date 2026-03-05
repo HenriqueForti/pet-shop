@@ -1,35 +1,35 @@
-'use client';
+"use client"
 
-import * as React from 'react';
-import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { XIcon } from 'lucide-react';
+import * as React from "react"
+import * as DialogPrimitive from "@radix-ui/react-dialog"
+import { XIcon } from "lucide-react"
 
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import { cva, type VariantProps } from 'class-variance-authority';
 
 function Dialog({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
-  return <DialogPrimitive.Root data-slot="dialog" {...props} />;
+  return <DialogPrimitive.Root data-slot="dialog" {...props} />
 }
 
 function DialogTrigger({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Trigger>) {
-  return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />;
+  return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />
 }
 
 function DialogPortal({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Portal>) {
-  return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />;
+  return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />
 }
 
 function DialogClose({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Close>) {
-  return <DialogPrimitive.Close data-slot="dialog-close" {...props} />;
+  return <DialogPrimitive.Close data-slot="dialog-close" {...props} />
 }
 
 // Variantes para DialogOverlay
@@ -62,8 +62,9 @@ function DialogOverlay({
       className={cn(dialogOverlayVariants({ variant }), className)}
       {...props}
     />
-  );
+  )
 }
+
 
 // Variantes para DialogContent
 const dialogContentVariants = cva(
@@ -86,6 +87,7 @@ const dialogContentVariants = cva(
     },
   }
 );
+
 
 function DialogContent({
   className,
@@ -119,7 +121,7 @@ function DialogContent({
         )}
       </DialogPrimitive.Content>
     </DialogPortal>
-  );
+  )
 }
 
 // Variantes para DialogHeader
@@ -147,7 +149,7 @@ function DialogHeader({
       className={cn(dialogHeaderVariants({ align }), className)}
       {...props}
     />
-  );
+  )
 }
 
 function DialogFooter({
@@ -155,14 +157,14 @@ function DialogFooter({
   showCloseButton = false,
   children,
   ...props
-}: React.ComponentProps<'div'> & {
-  showCloseButton?: boolean;
+}: React.ComponentProps<"div"> & {
+  showCloseButton?: boolean
 }) {
   return (
     <div
       data-slot="dialog-footer"
       className={cn(
-        'flex flex-col-reverse gap-2 sm:flex-row sm:justify-end',
+        "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
         className
       )}
       {...props}
@@ -174,7 +176,7 @@ function DialogFooter({
         </DialogPrimitive.Close>
       )}
     </div>
-  );
+  )
 }
 
 // Variantes para DialogTitle
@@ -205,7 +207,7 @@ function DialogTitle({
       className={cn(dialogTitleVariants({ size }), className)}
       {...props}
     />
-  );
+  )
 }
 
 // Variantes para DialogDescription
@@ -235,7 +237,7 @@ function DialogDescription({
       className={cn(dialogDescriptionVariants({ size }), className)}
       {...props}
     />
-  );
+  )
 }
 
 export {
@@ -254,4 +256,5 @@ export {
   dialogHeaderVariants,
   dialogTitleVariants,
   dialogDescriptionVariants,
-};
+
+}
